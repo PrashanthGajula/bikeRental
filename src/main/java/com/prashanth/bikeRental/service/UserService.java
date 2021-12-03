@@ -11,4 +11,6 @@ public interface UserService
     public List<User> getCheckedoutUers();
 
     public User getUserById(Integer id);
+
+    public User addUser(User user);
 }

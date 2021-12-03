@@ -35,4 +35,10 @@ public class UserServiceImpl implements UserService
         return User.Builder("Sashank", 4691112233L).email("pg@gmail.com").isAdmin("true").build();
     }
 
+    @Override
+    public User addUser(final User user)
+    {
+        return User.Builder(user.getName(), user.getPhone()).email(user.getEmail()).isAdmin(user.getIsAdmin()).build();
+    }
+
 }
