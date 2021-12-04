@@ -32,6 +32,11 @@ public class Bike
         this.needservice = bikeBuilder.needservice;
     }
 
+    public int getId()
+    {
+        return id;
+    }
+
     public String getType()
     {
         return type;

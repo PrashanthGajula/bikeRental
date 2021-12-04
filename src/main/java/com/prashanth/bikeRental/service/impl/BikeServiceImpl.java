@@ -1,4 +1,4 @@
-package com.prashanth.bikeRental.service;
+package com.prashanth.bikeRental.service.impl;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.prashanth.bikeRental.model.Bike;
+import com.prashanth.bikeRental.service.BikeService;
 
 @Service
 public class BikeServiceImpl implements BikeService

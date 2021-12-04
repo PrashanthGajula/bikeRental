@@ -277,6 +277,32 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Checkout",
+			"item": [
+				{
+					"name": "checkout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/checkout/{{userId}}/{{bikeId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"checkout",
+								"{{userId}}",
+								"{{bikeId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
