@@ -2,23 +2,25 @@ package com.prashanth.bikeRental.service.impl;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.prashanth.bikeRental.dao.UserDao;
 import com.prashanth.bikeRental.model.User;
 import com.prashanth.bikeRental.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService
 {
-
+	@Autowired
+	UserDao userDao;
+	
     @Override
     public List<User> getAllUsers()
     {
-        final User u1 = User.Builder("Prashanth", 4691112233L).email("pg@gmail.com").isAdmin("true").build();
-        final User u2 = User.Builder("Hari", 9032223344L).email("hh@gmail.com").isAdmin("false").build();
-
-        return Arrays.asList(u1, u2);
+    	return userDao.findAll();
     }
 
     @Override
@@ -31,15 +33,18 @@ public class UserServiceImpl implements UserService
     }
 
     @Override
-    public User getUserById(final Integer id)
+    public Optional<User> getUserById(final Integer id)
     {
-        return User.Builder("Sashank", 4691112233L).email("pg@gmail.com").isAdmin("true").build();
+    	return userDao.findById(id);
+    	
+        //return User.Builder("Sashank", 4691112233L).email("pg@gmail.com").isAdmin("true").build();
     }
 
     @Override
     public User addUser(final User user)
     {
-        return User.Builder(user.getName(), user.getPhone()).email(user.getEmail()).isAdmin(user.getIsAdmin()).build();
+    	return userDao.save(user);
+        //return User.Builder(user.getName(), user.getPhone()).email(user.getEmail()).isAdmin(user.getIsAdmin()).build();
     }
 
 }

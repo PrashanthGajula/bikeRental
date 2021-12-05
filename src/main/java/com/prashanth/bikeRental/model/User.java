@@ -22,17 +22,19 @@ public class User
     private int id;
 
     @Column(name = "name")
-    private final String name;
+    private String name;
 
     @Column(name = "phone")
-    private final long phone;
+    private long phone;
 
     @Column(name = "email")
-    private final String email;
+    private String email;
 
-    @Column(name = "isAdmin")
-    private final String isAdmin;
-
+    @Column(name = "isadmin")
+    private String isAdmin;
+ 
+    private User(){}
+    
     private User(final UserBuilder builder)
     {
         this.name = builder.name;
